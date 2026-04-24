@@ -1,0 +1,316 @@
+/* ============================================
+   SHOPKO – Hlavný stylesheet css
+   ============================================ */
+
+/* Reset & base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    color: #222;
+    background: #f8f8f8;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navbar__logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #111;
+}
+
+.navbar__nav {
+    display: flex;
+    gap: 24px;
+}
+
+.navbar__nav a {
+    font-size: 14px;
+    color: #444;
+    transition: color 0.2s;
+}
+
+.navbar__nav a:hover { color: #111; }
+
+.navbar__search {
+    display: flex;
+    flex: 1;
+    max-width: 280px;
+}
+
+.navbar__search input {
+    flex: 1;
+    padding: 7px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 13px;
+    outline: none;
+}
+
+.navbar__search button {
+    padding: 7px 12px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.navbar__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.navbar__actions a { color: #333; transition: color 0.2s; }
+.navbar__actions a:hover { color: #111; }
+
+.navbar__cart {
+    font-weight: 600;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+    text-align: center;
+}
+
+.btn:hover { opacity: 0.85; }
+.btn--dark    { background: #111; color: #fff; }
+.btn--white   { background: #fff; color: #111; }
+.btn--outline { background: transparent; border: 1px solid #111; color: #111; }
+.btn--full    { width: 100%; display: block; }
+.btn--disabled { background: #ccc; color: #888; cursor: not-allowed; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+    background: #ececec;
+    display: flex;
+    align-items: center;
+    min-height: 280px;
+    padding: 40px 80px;
+    gap: 60px;
+}
+
+.hero__content { flex: 1; }
+.hero__content h1 { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+.hero__content p  { font-size: 16px; color: #555; margin-bottom: 24px; }
+.hero__image { flex: 1; text-align: right; }
+.hero__image img { max-height: 220px; border-radius: 8px; }
+
+/* ============================================
+   SECTION TITLE
+   ============================================ */
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111;
+}
+
+/* ============================================
+   KATEGÓRIE
+   ============================================ */
+.categories {
+    padding: 48px 0 24px;
+}
+
+.categories__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+}
+
+.category-card {
+    background: #e2e2e2;
+    border-radius: 8px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.category-card:hover {
+    background: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   PRODUKTY
+   ============================================ */
+.products-section {
+    padding: 40px 0 60px;
+}
+
+.products__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+.product-card__image {
+    height: 220px;
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+.product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card__placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 13px;
+}
+
+.product-card__body {
+    padding: 14px 16px 16px;
+}
+
+.product-card__category {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-card__name {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 0 8px;
+    color: #111;
+}
+
+.product-card__name a:hover { color: #444; }
+
+.product-card__price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: #222;
+    color: #888;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 13px;
+    margin-top: auto;
+}
+
+/* ============================================
+   FORMULÁRE
+   ============================================ */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #111;
+}
+
+/* ============================================
+   SPRÁVY (flash messages)
+   ============================================ */
+.alert {
+    padding: 12px 18px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.alert--success { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+.alert--error   { background: #feebee; color: #c62828; border: 1px solid #ef9a9a; }
+.alert--info    { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
